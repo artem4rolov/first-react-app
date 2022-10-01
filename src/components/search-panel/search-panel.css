@@ -7,3 +7,15 @@
     flex-grow: 1;
     margin-right: 3px;
 }
+
+@media (max-width: 576px) {
+  .search-panel {
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .search-panel .search-input {
+    width: 90%;
+  }
+}

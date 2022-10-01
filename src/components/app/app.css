@@ -1,12 +1,13 @@
 .app {
   margin: 0 auto;
-  min-width: 800px;
+  width: 800px;
 }
 
-body {
+body, html {
   background-color: rgb(210, 227, 242);
   margin: 0;
   padding: 0;
+  box-sizing: border-box;
 }
 
 #root {
@@ -15,4 +16,12 @@ body {
   display: flex;
   justify-content: space-between;
   align-items: center;
+}
+
+@media (max-width: 762px) {
+  .app {
+    width: 100%;
+    margin: 0 auto;
+    align-items: center;
+  }
 }

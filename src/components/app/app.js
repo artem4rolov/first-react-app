@@ -6,6 +6,14 @@ import BottomPanel from "../bottom-panel/bottom-panel.js";
 import "./app.css";
 
 function App() {
+  //имитация получения данных с сервера
+  const data = [
+    { label: "Первый", important: false, id: "dsfdf" },
+    { label: "Второй", important: true, id: "sdfsf" },
+    { label: "Третий", important: false, id: "fdsf" },
+  ];
+
+  //в компонент ListGroup передаем объекты постов с сервера (массив data)
   return (
     <div className="app">
       <AppHeader />
@@ -13,7 +21,7 @@ function App() {
         <SearchPanel />
         <PostStatusFilter />
       </div>
-      <ListGroup />
+      <ListGroup posts={data} />
       <BottomPanel />
     </div>
   );

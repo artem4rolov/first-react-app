@@ -15,7 +15,7 @@
       outline: none;
   }
   .app-list-item .btn-star {
-      color: #FFD700;
+      color: #8d8d8d;
   }
   .app-list-item .btn-trash {
       color: red;
@@ -30,6 +30,7 @@
       transition: 0.3s all;
       transform: translateX(30px);
       opacity: 0;
+
   }
   
   .app-list-item-label {
@@ -50,6 +51,15 @@
   }
   
   .app-list-item.important .btn-star {
-      color: #aeaeae;
+    color: #FFD700;
+  }
+
+  @media (max-width: 576px) {
+    .app-list-item .bi-heart-fill {
+      transition: 0.3s all;
+      transform: translateX(1px);
+      opacity: 0;
+
+    }
   }
   

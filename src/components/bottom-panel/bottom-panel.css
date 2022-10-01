@@ -5,5 +5,18 @@
 .bottom-panel .new-post-label {
   width: auto;
   flex-grow: 1;
-  margin-right: 3px;
+  /* margin-right: 3px; */
+}
+
+@media (max-width: 576px) {
+  .bottom-panel {
+    width: 100%;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .bottom-panel .new-post-label {
+    width: 90%;
+  }
 }
