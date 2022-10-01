@@ -8,6 +8,10 @@ import "./app.css";
 function App() {
   //имитация получения данных с сервера
   const data = [
+    "ляля",
+    { f: 1 },
+    {},
+    { label: "" },
     { label: "Первый", important: false, id: "dsfdf" },
     { label: "Второй", important: true, id: "sdfsf" },
     { label: "Третий", important: false, id: "fdsf" },
