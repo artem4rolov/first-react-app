@@ -1,18 +1,23 @@
 import React from "react";
-import "./bottom-panel.css";
+import "./Bottom-panel.css";
 
-function BottomPanel() {
+function BottomPanel({ onAdd }) {
+  // передаем метод onAdd из App.js в кнопку "Добавить пост"
   return (
-    <form className="bottom-panel d-flex">
+    <div className="bottom-panel d-flex">
       <input
         type="text"
         placeholder="О чем думаете?"
         className="form-control new-post-label"
       />
-      <button type="submit" className="btn btn-outline-secondary">
+      <button
+        type="submit"
+        className="btn btn-outline-secondary"
+        onClick={() => onAdd("hello")}
+      >
         Добавить пост
       </button>
-    </form>
+    </div>
   );
 }
 

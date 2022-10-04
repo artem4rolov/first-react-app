@@ -1,5 +1,5 @@
 import React from "react";
-import "./list-goup-item.css";
+import "./List-group-item.css";
 
 export default class ListGroupItem extends React.Component {
   constructor(props) {
@@ -9,14 +9,17 @@ export default class ListGroupItem extends React.Component {
       like: false,
     };
     // this.onImportant = this.onImportant.bind(this);
+    // можно не биндить - просто использовать стрелочную функцию как метод
   }
 
+  // метод для избранного
   onImportant = () => {
     this.setState(({ important }) => ({
       important: !important,
     }));
   };
 
+  // метод для лайка
   onLike = () => {
     this.setState(({ like }) => ({
       like: !like,
@@ -25,7 +28,9 @@ export default class ListGroupItem extends React.Component {
 
   render() {
     let classNames = "app-list-item d-flex justify-content-between";
-    const { label } = this.props;
+    // забираем данные из props
+    const { label, onDelete } = this.props;
+    // забираем данные из state для дальнейшего их изменения
     const { important } = this.state;
     const { like } = this.state;
 
@@ -47,7 +52,7 @@ export default class ListGroupItem extends React.Component {
             <button className="btn-star btn-sm" onClick={this.onImportant}>
               <i className="bi bi-star-fill"></i>
             </button>
-            <button className="btn-trash btn-sm">
+            <button className="btn-trash btn-sm" onClick={onDelete}>
               <i className="bi bi-trash3-fill"></i>
             </button>
             <i className="bi bi-heart-fill"></i>
