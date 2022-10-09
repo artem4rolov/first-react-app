@@ -3,7 +3,7 @@ import ListGroupItem from "../List-group-item/List-group-item";
 import "./List-group.css";
 
 // принимаем в ListGroup посты (posts), которые приняли с сервера в app.js и передали в компонент ListGroup
-function ListGroup({ posts, onDelete }) {
+function ListGroup({ posts, onDelete, onToggleImportant, onToggleLiked }) {
   // сначала проверяем массив с объектами на наличие нужных ключей, и на то, что ключи не пустые
   const elements = posts
     .filter(
@@ -24,7 +24,12 @@ function ListGroup({ posts, onDelete }) {
       // передаем метод onAdd из App.js и с помощью стрелочной функции 'поднимаем' id кликнутого поста до компонента App.js (для того, чтобы понять на какой пост кликнули)
       return (
         <li key={id} className="list-group-item">
-          <ListGroupItem {...postProps} onDelete={() => onDelete(id)} />
+          <ListGroupItem
+            {...postProps}
+            onDelete={() => onDelete(id)}
+            onToggleImportant={() => onToggleImportant(id)}
+            onToggleLiked={() => onToggleLiked(id)}
+          />
         </li>
       );
     });
